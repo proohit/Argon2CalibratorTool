@@ -6,25 +6,35 @@ It currently only supports Argon2 calibration features. You can use this library
 
 This application is built upon the research in [this blog post](https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/).
 
-## Documentation
+## Usage
 
-First, clone the git repository.
+You can find pre compiled binaries for the following platforms:
 
+- Linux (x64)
+- macOS (x64)
+- Windows (x64)
+
+Releases can be downloaded from [GitHub releases](https://github.com/proohit/Twelve21.PasswordStorage/releases)
+
+After downloading the binaries, you might have to `chmod +x` the binaries.
+
+```sh
+chmod +x argon2-calibrator-linux-x64
+chmod +x argon2-calibrator-macos-x64
 ```
-git clone https://https://github.com/bburman/Twelve21.PasswordStorage.git
-```
 
-Secondly, enter the directory and build the solution.
+Run the binaries with the following command:
 
-```
-dotnet build
-```
+```sh
+./argon2-calibrator-linux-x64 a2c --help
 
-Next, enter the Twelve21.PasswordStorage subdirectory and run the Argon2 Calibration function.
+Usage:  a2c [options]
 
-```
-cd ./Twelve21.PasswordStorage
-dotnet run a2c
+Options:
+  -?|-h|--help      Show help information
+  -t|--time         The maximum time in milliseconds it should take to calculate the password hash. Defaults to 1000.
+  -p|--parallelism  The degree of parallelism. Defaults to twice the number of CPU cores.
+  -i|--iterations   The minimum number of iterations. Defaults to 2.
 ```
 
 The application will run and show you the best results, similar to:
@@ -42,19 +52,27 @@ M =    2 MB, T =  271, d = 8, Time = 0.973 s
 M =    1 MB, T =  639, d = 8, Time = 0.991 s
 ```
 
-For detailed help and options, add the --help option to the command line:
+## Development
+
+**Requires .NET 6.0 or higher**
+
+First, clone the git repository.
 
 ```
-> dotnet run a2c -- --help
+git clone https://github.com/proohit/Twelve21.PasswordStorage.git
+```
 
+Secondly, enter the directory and build the solution.
 
-Usage:  a2c [options]
+```
+dotnet build
+```
 
-Options:
-  -?|-h|--help      Show help information
-  -t|--time         The maximum time in milliseconds it should take to calculate the password hash. Defaults to 1000.
-  -p|--parallelism  The degree of parallelism. Defaults to twice the number of CPU cores.
-  -i|--iterations   The minimum number of iterations. Defaults to 2.
+Next, enter the Twelve21.PasswordStorage subdirectory and run the Argon2 Calibration function.
+
+```
+cd ./Twelve21.PasswordStorage
+dotnet run a2c
 ```
 
 ## License
