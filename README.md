@@ -26,9 +26,9 @@ chmod +x argon2-calibrator-macos-x64
 Run the binaries with the following command:
 
 ```sh
-./argon2-calibrator-linux-x64 a2c --help
+./argon2-calibrator-linux-x64 --help
 
-Usage:  a2c [options]
+Usage: [options]
 
 Options:
   -?|-h|--help      Show help information
@@ -72,7 +72,13 @@ Next, enter the Twelve21.PasswordStorage subdirectory and run the Argon2 Calibra
 
 ```
 cd ./Twelve21.PasswordStorage
-dotnet run a2c
+dotnet run --
+```
+
+## Build and publish
+
+```sh
+dotnet publish -r [win-x64|linux-x64|osx-x64] -c Release --self-contained true
 ```
 
 ## License
