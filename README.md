@@ -28,18 +28,21 @@ Run the binaries with the following command:
 ```sh
 ./argon2-calibrator-linux-x64 --help
 
-Usage: [options]
+Usage:  [options]
 
 Options:
   -?|-h|--help      Show help information
   -t|--time         The maximum time in milliseconds it should take to calculate the password hash. Defaults to 1000.
   -p|--parallelism  The degree of parallelism. Defaults to twice the number of CPU cores.
   -i|--iterations   The minimum number of iterations. Defaults to 2.
+  -m|--mode         The mode of operation. The default is Argon2id. Advanced usage only.
+  --saltlength      The length of the salt and password, in bytes. Defaults to 16. Advanced usage only.
+  --hashlength      The length of the hash, in bytes. Defaults to 16. Advanced usage only.
 ```
 
 The application will run and show you the best results, similar to:
 
-```
+```log
 Best results:
 M =  256 MB, T =    2, d = 8, Time = 0.732 s
 M =  128 MB, T =    6, d = 8, Time = 0.99 s
@@ -58,19 +61,19 @@ M =    1 MB, T =  639, d = 8, Time = 0.991 s
 
 First, clone the git repository.
 
-```
+```sh
 git clone https://github.com/proohit/Twelve21.PasswordStorage.git
 ```
 
 Secondly, enter the directory and build the solution.
 
-```
+```sh
 dotnet build
 ```
 
 Next, enter the Twelve21.PasswordStorage subdirectory and run the Argon2 Calibration function.
 
-```
+```sh
 cd ./Twelve21.PasswordStorage
 dotnet run --
 ```
