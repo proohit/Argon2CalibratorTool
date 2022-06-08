@@ -1,10 +1,6 @@
-# Twelve21.PasswordStorage
+# Argon2CalibratorTool
 
-This library is meant to provide utility functions for password storage. It is written in C# against .NET Core 2.2.
-
-It currently only supports Argon2 calibration features. You can use this library to determine which parameters to pass to one of the Argon2 hashing functions.
-
-This application is built upon the research in [this blog post](https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/).
+This tool is used to calibrate parameters for the Argon2 algorithm. Initial credits go to https://github.com/bburman/Twelve21.PasswordStorage.
 
 ## Usage
 
@@ -14,7 +10,7 @@ You can find pre compiled binaries for the following platforms:
 - macOS (x64)
 - Windows (x64)
 
-Releases can be downloaded from [GitHub releases](https://github.com/proohit/Twelve21.PasswordStorage/releases)
+Releases can be downloaded from [GitHub releases](https://github.com/proohit/Argon2CalibratorTool/releases)
 
 After downloading the binaries, you might have to `chmod +x` the binaries.
 
@@ -62,7 +58,7 @@ M =    1 MB, T =  639, d = 8, Time = 0.991 s
 First, clone the git repository.
 
 ```sh
-git clone https://github.com/proohit/Twelve21.PasswordStorage.git
+git clone https://github.com/proohit/Argon2CalibratorTool.git
 ```
 
 Secondly, enter the directory and build the solution.
@@ -71,10 +67,10 @@ Secondly, enter the directory and build the solution.
 dotnet build
 ```
 
-Next, enter the Twelve21.PasswordStorage subdirectory and run the Argon2 Calibration function.
+Next, enter the Argon2CalibratorTool subdirectory and run the Argon2 Calibration function.
 
 ```sh
-cd ./Twelve21.PasswordStorage
+cd ./Argon2CalibratorTool
 dotnet run --
 ```
 

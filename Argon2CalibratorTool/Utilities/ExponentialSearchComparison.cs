@@ -1,4 +1,4 @@
-﻿namespace Twelve21.PasswordStorage.Utilities
+﻿namespace Argon2CalibratorTool.Utilities
 {
     public enum ExponentialSearchComparison
     {

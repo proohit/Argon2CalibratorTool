@@ -1,4 +1,4 @@
-﻿namespace Twelve21.PasswordStorage.Argon
+﻿namespace Argon2CalibratorTool.Argon
 {
     public class Argon2Parameters
     {

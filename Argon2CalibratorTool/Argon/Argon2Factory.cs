@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 
-namespace Twelve21.PasswordStorage.Argon
+namespace Argon2CalibratorTool.Argon
 {
     public class Argon2Factory
     {
@@ -30,7 +30,7 @@ namespace Twelve21.PasswordStorage.Argon
                 case Argon2Mode.Argon2id:
                     return new Argon2id(passwordBytes);
                 default:
-                    throw new NotSupportedException($"The specified Argon2 mode, '{ mode }', is not supported.");
+                    throw new NotSupportedException($"The specified Argon2 mode, '{mode}', is not supported.");
             }
         }
     }

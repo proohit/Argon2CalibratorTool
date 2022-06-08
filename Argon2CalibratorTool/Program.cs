@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.CommandLineUtils;
 using System;
 using System.Linq;
-using Twelve21.PasswordStorage.Argon;
-using Twelve21.PasswordStorage.Utilities;
+using Argon2CalibratorTool.Argon;
+using Argon2CalibratorTool.Utilities;
 
-namespace Twelve21.PasswordStorage
+namespace Argon2CalibratorTool
 {
     partial class Program
     {
@@ -60,7 +60,7 @@ namespace Twelve21.PasswordStorage
                     HashLength = ReadOption(hashLengthOption, () => 16)
                 };
 
-                var calibrator = new Argon2Calibrator(factory, logger, input);
+                var calibrator = new Argon.Argon2Calibrator(factory, logger, input);
                 var results = calibrator.Run();
 
                 logger.WriteLine();

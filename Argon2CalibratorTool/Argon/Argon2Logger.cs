@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Twelve21.PasswordStorage.Argon
+namespace Argon2CalibratorTool.Argon
 {
     public class Argon2Logger
     {
@@ -10,7 +10,7 @@ namespace Twelve21.PasswordStorage.Argon
             Write($"T = {parameters.Iterations,4}, ");
             Write($"d = {parameters.DegreeOfParallelism}, ");
         }
-        
+
         public void WriteCompleteCalibrationTest(long elapsedMilliseconds)
         {
             WriteLine($"Time = {elapsedMilliseconds / 1000.0} s");

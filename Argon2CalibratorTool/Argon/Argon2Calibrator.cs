@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Twelve21.PasswordStorage.Utilities;
+using Argon2CalibratorTool.Utilities;
 
-namespace Twelve21.PasswordStorage.Argon
+namespace Argon2CalibratorTool.Argon
 {
     public class Argon2Calibrator
     {
