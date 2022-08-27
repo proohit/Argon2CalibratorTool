@@ -8,6 +8,8 @@
 
         public int MinimumIterations { get; set; }
 
+        public int MaximumMemory { get; set; }
+
         public Argon2Mode Mode { get; set; }
 
         public int SaltAndPasswordLength { get; set; }

@@ -31,7 +31,8 @@ Options:
   -t|--time         The maximum time in milliseconds it should take to calculate the password hash. Defaults to 1000.
   -p|--parallelism  The degree of parallelism. Defaults to twice the number of CPU cores.
   -i|--iterations   The minimum number of iterations. Defaults to 2.
-  -m|--mode         The mode of operation. The default is Argon2id. Advanced usage only.
+  -m|--memory       The max amount of memory supported to count down from. Default begins at 1024KB and increases instead.
+  --mode            The mode of operation. The default is Argon2id. Advanced usage only.
   --saltlength      The length of the salt and password, in bytes. Defaults to 16. Advanced usage only.
   --hashlength      The length of the hash, in bytes. Defaults to 16. Advanced usage only.
 ```

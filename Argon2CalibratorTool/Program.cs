@@ -30,8 +30,13 @@ namespace Argon2CalibratorTool
                 "The minimum number of iterations. Defaults to 2.",
                 CommandOptionType.SingleValue
                 );
+            var maxMemoryOption = app.Option(
+                "-m|--memory",
+                "The max amount of memory supported to count down from. Default begins at 1024KB and increases instead.",
+                CommandOptionType.SingleValue
+                );
             var modeOption = app.Option(
-                "-m|--mode",
+                "--mode",
                 "The mode of operation. The default is Argon2id. Advanced usage only.",
                 CommandOptionType.SingleValue
                 );
@@ -55,6 +60,7 @@ namespace Argon2CalibratorTool
                     MaximumTime = ReadOption(timeOption, () => 1000),
                     DegreeOfParallelism = ReadOption(parallelismOption, () => SystemManagement.GetTotalCpuCores() * 2),
                     MinimumIterations = ReadOption(iterationsOption, () => 2),
+                    MaximumMemory = ReadOption(maxMemoryOption, () => -1),
                     Mode = ReadOption(modeOption, () => Argon2Mode.Argon2id),
                     SaltAndPasswordLength = ReadOption(saltLengthOption, () => 16),
                     HashLength = ReadOption(hashLengthOption, () => 16)
